@@ -9,6 +9,13 @@ import marked from 'marked'
 import highlight from'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 
+
+marked.setOptions({
+    highlight: function(code, lang) {
+        return highlight.highlightAuto(code, [lang]).value
+    }
+})
+
 export default {
   name: 'app',
   data () {
@@ -26,6 +33,7 @@ export default {
   mounted () {
     this.output = marked(this.input)
     highlight.initHighlightingOnLoad()
+    // console.log(highlight)
   }
 }
 </script>
@@ -54,6 +62,12 @@ textarea
 
 #preview
   padding: 1em
+
+pre
+  padding: 15px
+  background-color: #282c34
+  color: #EEE
+  margin-right: 10px
 
 @media print
   textarea

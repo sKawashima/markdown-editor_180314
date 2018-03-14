@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+## 参考
+- [[Vue.js 1.x] 最低限のMarkdown Editor作成 ( Vue.js + Marked.js + Highlight.js ) - Qiita](https://qiita.com/koara-local/items/ee65916c46a89b055948)
+
 ## Build Setup
 
 ``` bash
