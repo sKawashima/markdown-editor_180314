@@ -11,14 +11,14 @@ export default {
   name: 'app',
   data () {
     return {
-      input: sessionStorage.getItem('markdown-editor_180314'),
+      input: localStorage.getItem('markdown-editor_180314'),
       output: ''
     }
   },
   watch: {
     input: function () {
       this.output = marked(this.input)
-      sessionStorage.setItem('markdown-editor_180314', this.input)
+      localStorage.setItem('markdown-editor_180314', this.input)
     }
   },
   mounted () {
