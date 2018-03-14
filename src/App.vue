@@ -1,11 +1,13 @@
 <template lang='pug'>
 #app
-  textarea(v-model='input')
+  textarea.markdown(v-model='input')
   #preview(v-html='output')
 </template>
 
 <script>
 import marked from 'marked'
+import highlight from'highlight.js'
+import 'highlight.js/styles/atom-one-dark.css'
 
 export default {
   name: 'app',
@@ -23,6 +25,8 @@ export default {
   },
   mounted () {
     this.output = marked(this.input)
+    highlight.initHighlightingOnLoad()
+    console.log(highlight)
   }
 }
 </script>
