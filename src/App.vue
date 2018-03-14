@@ -1,11 +1,13 @@
 <template lang='pug'>
 #app
-  textarea(v-model='input')
+  #editor(v-model='input')
   #preview(v-html='output')
 </template>
 
 <script>
 import marked from 'marked'
+import codemirror from 'codemirror'
+import 'codemirror/lib/codemirror.css'
 
 export default {
   name: 'app',
@@ -23,6 +25,11 @@ export default {
   },
   mounted () {
     this.output = marked(this.input)
+    codemirror(document.getElementById('editor'),{
+      mode: 'markdown',
+      lineNumbers: true,
+      value: this.input
+    })
   }
 }
 </script>
@@ -37,11 +44,11 @@ html, body
   display: flex
   height: 100%
 
-textarea, #preview
+#editor, #preview
   flex: 1 1 0
   overflow-y: scroll
 
-textarea
+#editor
   padding: 1em
   font-size: 12px
   background-color: #eee
@@ -53,7 +60,7 @@ textarea
   padding: 1em
 
 @media print
-  textarea
+  #editor
     display: none
   #preview
     overflow-y: visible
