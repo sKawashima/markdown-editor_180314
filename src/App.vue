@@ -1,6 +1,6 @@
 <template lang='pug'>
 #app
-  textarea.markdown(v-model='input')
+  textarea(v-model='input')
   #preview(v-html='output')
 </template>
 
