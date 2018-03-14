@@ -26,7 +26,6 @@ export default {
   mounted () {
     this.output = marked(this.input)
     highlight.initHighlightingOnLoad()
-    console.log(highlight)
   }
 }
 </script>
