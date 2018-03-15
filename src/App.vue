@@ -63,6 +63,9 @@ textarea
 #preview
   padding: 1em
 
+.hljs
+  all: unset
+
 pre
   padding: 15px
   background-color: #282c34
