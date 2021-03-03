@@ -12,7 +12,7 @@
   "dependencies": {
     "highlight.js": "^9.12.0",
     "marked": "^0.3.18",
-    "pug": "^2.0.1",
+    "pug": "^3.0.1",
     "vue": "^2.5.11"
   },
   "browserslist": [
